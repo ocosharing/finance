@@ -47,7 +47,7 @@
 
 <body class="">
   <div class="wrapper ">
-    <div class="sidebar" data-color="azure" data-background-color="white" data-image="../assets/img/sidebar-1.jpg">
+    <div class="sidebar" data-color="azure" data-background-color="white" data-image="<?php echo base_url('../assets/img/sidebar-1.jpg')?>">
       <!--
         Tip 1: You can change the color of the sidebar using: data-color="purple | azure | green | orange | danger"
 
@@ -55,7 +55,7 @@
     -->
       <div class="logo">
         <center>
-        <img src="<?php echo base_url('asses/images/New Logo OCO-2.png')?>" width="50px"  alt="IMG">
+        <img src="<?php echo base_url('asses/images/New Logo OCO-2.png')?>" width="100px"  alt="IMG">
       </center>
       </div>
       <div class="sidebar-wrapper">

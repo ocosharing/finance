@@ -1,7 +1,7 @@
 </body>
 </html>
 <script type="text/javascript">
-    var IDLE_TIMEOUT = 1 * 60;  // 10 minutes of inactivity
+    var IDLE_TIMEOUT = 10 * 60;  // 10 minutes of inactivity
     var _idleSecondsCounter = 0;
     document.onclick = function() {
         _idleSecondsCounter = 0;

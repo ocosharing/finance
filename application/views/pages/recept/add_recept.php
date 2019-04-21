@@ -80,7 +80,7 @@
     -->
             <div class="logo">
                 <center>
-                    <img src="<?php echo base_url('asses/images/New Logo OCO-2.png')?>" width="50px" alt="IMG">
+                    <img src="<?php echo base_url('asses/images/New Logo OCO-2.png')?>" width="100px" alt="IMG">
                 </center>
             </div>
             <div class="sidebar-wrapper">
@@ -197,6 +197,22 @@
                                 </div>
                                 <div class="card-body">
                                     <form>
+                                    <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                        <label class="bmd-label-floating">الصندوق</label>
+					<div>
+						<select class="form-control" name="box">
+							<option>يرجى اختيار الصندوق</option>
+							<option>eCommerce Bussiness</option>
+							<option>UI/UX Design</option>
+							<option>Online Services</option>
+						</select>
+						
+					</div>
+                </div>
+</div>
+</div>
                                         <div class="row">
                                             <div class="col-md-6">
                                                 <div class="form-group">
@@ -288,8 +304,16 @@
                                                     </div>
                                                     <div class="col-md-4">
                                                         <div class="form-group">
-                                                            <label class="bmd-label-floating">مسحوب على /بنك</label>
-                                                            <input type="text" class="form-control">
+                                                        
+					<div>
+						<select class="form-control" name="box">
+							<option>مسحوب على/ بنك</option>
+							<option>eCommerce Bussiness</option>
+							<option>UI/UX Design</option>
+							<option>Online Services</option>
+						</select>
+						
+					</div>
                                                         </div>
                                                     </div>
                                                 </div>

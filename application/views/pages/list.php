@@ -52,7 +52,7 @@
 
 <body class="">
   <div class="wrapper ">
-    <div class="sidebar" data-color="azure" data-background-color="white" data-image="../assets/img/sidebar-1.jpg">
+  <div class="sidebar" data-color="azure" data-background-color="white" data-image="../assets/img/sidebar-1.jpg">
       <!--
         Tip 1: You can change the color of the sidebar using: data-color="purple | azure | green | orange | danger"
 
@@ -60,7 +60,7 @@
     -->
       <div class="logo">
         <center>
-        <img src="<?php echo base_url('asses/images/New Logo OCO-2.png')?>" width="50px"  alt="IMG">
+        <img src="<?php echo base_url('asses/images/New Logo OCO-2.png')?>" width="100px"  alt="IMG">
       </center>
       </div>
       <div class="sidebar-wrapper">
@@ -170,6 +170,7 @@
 <a href="<?php echo base_url('recept_controller/not_apprvel_recept')?>" class="btn btn-primary btn-round">السندات المرفوضه </a>
 <a href="#pablo" class="btn btn-primary btn-round">السندات تحت الاجراء </a>
 <a href="#pablo" class="btn btn-primary btn-round">السندات المحذوفه </a>
+<a href="<?php echo base_url('list_controller/settings')?>" class="btn btn-primary btn-round">لوحة التحكم بالسندات </a>
         <div class="container-fluid">
           <div class="row">
             <div class="col-md-12">

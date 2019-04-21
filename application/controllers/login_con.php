@@ -15,7 +15,7 @@ class login_con extends CI_Controller
     public function index(){
         $this->load->view('templet/header');
         $this->load->view('pages/home');
-        $this->load->view('templet/footer');
+      
         $data['check']= false;
     }
     public function login()
@@ -35,7 +35,7 @@ class login_con extends CI_Controller
             $data['errors'] = 'Incorrect username/password combination';
             $this->load->view('templet/header');
             $this->load->view('pages/home',$data);
-            $this->load->view('templet/footer');
+           
             $data['check']=false;
         }	
     }
