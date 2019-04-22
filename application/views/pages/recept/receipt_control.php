@@ -53,7 +53,8 @@
 
 <body class="">
     <div class="wrapper ">
-        <div class="sidebar" data-color="azure" data-background-color="white" data-image="../assets/img/sidebar-1.jpg">
+        <div class="sidebar" data-color="azure" data-background-color="white"
+            data-image="<?php echo base_url('assets/img/sidebar-1.jpg') ?>">
             <!--
         Tip 1: You can change the color of the sidebar using: data-color="purple | azure | green | orange | danger"
 
@@ -176,187 +177,182 @@
                 <a href="#pablo" class="btn btn-primary btn-round">السندات المحذوفه </a>
                 <a href="#pablo" class="btn btn-primary btn-round">لوحة التحكم بالسندات </a>
                 <div class="row">
-                <div class="col-lg-6">
-                    <div class="card">
-                        <div class="card-header card-header-primary">
-                            <h4 class="card-title">الصندوق</h4>
-                            <p class="card-category">الصناديق التابعه للسند الصرف</p>
-                        </div>
-                        <div class="card-body table-responsive">
-                            <table class="table table-hover">
-                                <thead class="text-warning">
-                                    <th>رقم الصندوق</th>
-                                    <th> اسم الصندوق</th>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>1</td>
-                                        <td>Dakota Rice</td>
-                                    </tr>
-
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="card">
-                        <div class="card-header card-header-primary">
-                            <h4 class="card-title">الصندوق</h4>
-                            <p class="card-category">الصناديق التابعه للسند الصرف</p>
-                        </div>
-                        <div class="card-body table-responsive">
-                            <table class="table table-hover">
-                                <thead class="text-warning">
-                                    <th>رقم الصندوق</th>
-                                    <th> اسم الصندوق</th>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>1</td>
-                                        <td>Dakota Rice</td>
-                                    </tr>
-
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </div>
-                </div>
-               
-
-                <!-- The Modal -->
-                <div class="modal fade" id="myModal">
-                    <div class="modal-dialog modal-lg">
-                        <div class="modal-content">
-
-                            <!-- Modal Header -->
-                            <div class="modal-header">
-                                <h4 class="modal-title">عرض السند</h4>
-                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <div class="col-lg-5">
+                        <div class="card">
+                            <div class="card-header card-header-primary">
+                                <h4 class="card-title">الصندوق</h4>
+                                <p class="card-category">الصناديق التابعه للسند الصرف</p>
+                                <p align="left"><a href="#pablo" class="btn btn-secondary btn-round" data-toggle="modal"
+                                        data-target="#myModal">إضافة صندوق </a></p>
                             </div>
-
-                            <!-- Modal body -->
-                            <div class="modal-body">
-                                <center>
-                                    <img src="<?php echo base_url('asses/images/haed.jpg')?>" width="700px" alt="IMG">
-                                    <table style="width: 400px;" border="0">
-                                        <tbody>
-                                            <tr>
-
-                                                <td style="padding-left: 30px; width: 532.4px;">
-                                                    <h2
-                                                        style="text-align: center;  font-family:'Droid Arabic Naskh', serif; line-height:60px; ">
-                                                        سند صرف (للصندوق)</h2>
-                                                </td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </center>
-                                <table align="left">
+                            <div class="card-body table-responsive">
+                                <table class="table table-hover">
+                                    <thead class="text-warning">
+                                        <th>رقم الصندوق</th>
+                                        <th> اسم الصندوق</th>
+                                        <th>الاجرائات</th>
+                                    </thead>
                                     <tbody>
                                         <tr>
+                                            <td>1</td>
+                                            <td>Dakota Rice</td>
+                                        </tr>
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-7">
+                        <div class="card">
+                            <div class="card-header card-header-rose">
+                                <h4 class="card-title">البنك</h4>
+                                <p class="card-category">البنوك التابعه للسند الصرف</p>
+                                <p align="left"><a href="#pablo" class="btn btn-secondary btn-round" id="bank"
+                                        data-toggle="modal" data-target="#y">إضافة بنك </a></p>
+                            </div>
+                            <div class="card-body table-responsive">
+                                <table class="table table-hover">
+                                    <thead class="text-warning">
+                                        <th>رقم البنك </th>
+                                        <th>اسم البنك</th>
+                                        <th>رقم حساب البنك</th>
+                                        <th>الفرع</th>
+                                        <th>SWIFT CODE</th>
+                                        <th>الاجرائات</th>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>1</td>
+                                            <td>بنك مسقط</td>
+                                            <td> 150033564542122</td>
+                                            <td> فرع مطرح</td>
+                                            <td> BQ33330000</td>
                                             <td>
-                                                <br>
-                                                <br>
-                                                <p class="text-left">:الرقم</p>
-                                                <p style="">:التاريخ</p>
-                                            </td>
+                                                <button type="button" rel="tooltip" title="Edit Task"
+                                                    class="btn btn-primary btn-link btn-sm">
+                                                    <i class="material-icons">edit</i>
+                                                </button>
+                                                <button type="button" rel="tooltip" title="Edit Task"
+                                                    class="btn btn-primary btn-link btn-sm">
+                                                    <i class="material-icons">delete</i>
+                                                </button>
+                                              
+                                              </td>
                                         </tr>
-                                    </tbody>
 
-                                </table>
-                                <Br>
-                                <Br>
-                                <table style="width: 564.4px;">
-                                    <tbody>
-                                        <tr>
-                                            <td style="width: 557.4px;">
-                                                <p style="text-align: right;">اسم المستفيد</p>
-                                                <p style="text-align: right;">عنوان المستفيد</p>
-                                            </td>
                                         </tr>
                                     </tbody>
                                 </table>
-                                <center>
-                                    <table style="width: 586px;" border="1">
-                                        <tbody>
-                                            <tr>
-                                                <td style="width: 445px;" rowspan="2">
-                                                    <h3 style="font-family: 'Lateef', serif; line-height:60px; font-size:30px"
-                                                        align="center">البيــــــــــــــــــــــــان</h3>
-                                                </td>
-                                                <td style="width: 168px; text-align: center;" colspan="2">
-                                                    <h3>المبلغ</h3>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td style="width: 76px;">&nbsp;</td>
-                                                <td style="width: 92px;">&nbsp;</td>
-                                            </tr>
-                                            <tr>
-                                                <td style="width: 445px;">البان1</td>
-                                                <td style="width: 76px;">السعر</td>
-                                                <td style="width: 92px;">البيان3</td>
-                                            </tr>
-                                            <tr>
-                                                <td style="width: 445px;">&nbsp;</td>
-                                                <td style="width: 76px;">&nbsp;</td>
-                                                <td style="width: 92px;">&nbsp;</td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </center>
-                                <h5 style="text-align: right;"><strong>المبلغ بالحروف</strong></h5>
-                                <center>
-                                    <table style="height: 64px;" border="1" width="586px">
-                                        <tbody>
-                                            <tr>
-                                                <td style="width: 180.8px; text-align: center;">رقم الشيك/ التحويل
-                                                </td>
-                                                <td style="width: 182.4px; text-align: center;">تاريخ الشيك/ التحويل
-                                                </td>
-                                                <td style="width: 183.2px; text-align: center;">مسحوب على /بنك</td>
-                                            </tr>
-                                            <tr>
-                                                <td style="width: 180.8px;">&nbsp;</td>
-                                                <td style="width: 182.4px;">&nbsp;</td>
-                                                <td style="width: 183.2px;">&nbsp;</td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                    <br>
-                                    <br>
-                                    <table border="0" style="height: 20px; width: 100%; border-collapse: collapse;">
-                                        <tbody>
-                                            <tr style="height: 20px;">
-                                                <td style="width: 33.3333%; height: 20px; text-align: center;">
-                                                    <strong>اعده&nbsp;</strong></td>
-                                                <td style="width: 33.3333%; height: 20px; text-align: center;">
-                                                    <strong>تصديق المالي</strong></td>
-                                                <td style="width: 33.3333%; height: 20px; text-align: center;">
-                                                    <strong>المراجعة والتدقيق</strong></td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </center>
-                                <div>
-                                </div>
-
-                                <!-- Modal footer -->
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                </div>
-
                             </div>
                         </div>
                     </div>
+                </div>
 
+            </div>
+        </div>
+    </div>
 
+    <!-- The Modal -->
+    <div class="modal fade" id="y">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
 
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <h4 class="modal-title">اضافة بنك جديد</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
 
+                <!-- Modal body -->
+                <div class="modal-body">
+                    <div class="card-body">
+                        <form>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="bmd-label-floating">اسم البنك</label>
+                                        <input type="text" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="bmd-label-floating">رقم الحساب</label>
+                                        <input type="number" class="form-control">
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="bmd-label-floating">الفرع</label>
+                                        <input type="text" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="bmd-label-floating">SWIFT CODE</label>
+                                        <input type="text" class="form-control">
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="row">
+
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Modal footer -->
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-rose pull-left">اضافة
+                        <button type="button" class="btn btn-default" data-dismiss="modal">الغاء</button>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+    </div>
+    <div class="modal fade" id="myModal">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <h4 class="modal-title">اضافة صندوق جديد</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+
+                <!-- Modal body -->
+                <div class="modal-body">
+                    <div class="card-body">
+                        <form>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label class="bmd-label-floating">اسم الصندوق</label>
+                                        <input type="text" class="form-control">
+                                    </div>
+                                </div>
+
+                            </div>
+                        </form>
+                    </div>
+
+                    <!-- Modal footer -->
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-success pull-left">اضافة
+                            <button type="button" class="btn btn-default" data-dismiss="modal">الغاء</button>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
 
 </body>
 <script>
@@ -368,6 +364,9 @@ $(document).ready(function() {
         });
     });
 });
-</script>
 
-</html>
+
+
+
+<
+/html>

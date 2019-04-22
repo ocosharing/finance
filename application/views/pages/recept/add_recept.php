@@ -13,27 +13,28 @@
     <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
 
     <script type="text/javascript">
-         $(document).ready(function(){
-        $('#add').click(function(){
+    $(document).ready(function() {
+        $('#add').click(function() {
             var dec = $('#dec').val();
             var price = $('#price').val();
-            var nmm=$('#totel').val();
+            var nmm = $('#totel').val();
             var answer = parseFloat(nmm) + parseFloat(price);
             $('#totel').val(answer);
-            var markup = ' <tr><td> <input type="text"  class="form-control" value="'+dec+'"></td><td></td><td><input type="text" name ="" class="form-control" value='+ price +' ></td></tr>';
+            var markup = ' <tr><td> <input type="text"  class="form-control" value="' + dec +
+                '"></td><td></td><td><input type="text" name ="" class="form-control" value=' + price +
+                ' ></td></tr>';
             $('table tbody').append(markup);
-           
-           
-           
+
+
+
             $('#dec').val("");
             $('#price').val("");
         });
-        
-       
-    });    
-    
+
+
+    });
     </script>
-    
+
     <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no'
         name='viewport' />
     <!--     Fonts and icons     -->
@@ -72,7 +73,8 @@
 
 <body class="">
     <div class="wrapper ">
-        <div class="sidebar" data-color="azure" data-background-color="white" data-image="../assets/img/sidebar-1.jpg">
+        <div class="sidebar" data-color="azure" data-background-color="white"
+            data-image="<?php echo base_url('assets/img/sidebar-1.jpg') ?>">
             <!--
         Tip 1: You can change the color of the sidebar using: data-color="purple | azure | green | orange | danger"
 
@@ -197,22 +199,22 @@
                                 </div>
                                 <div class="card-body">
                                     <form>
-                                    <div class="row">
+                                        <div class="row">
                                             <div class="col-md-6">
                                                 <div class="form-group">
-                        <label class="bmd-label-floating">الصندوق</label>
-					<div>
-						<select class="form-control" name="box">
-							<option>يرجى اختيار الصندوق</option>
-							<option>eCommerce Bussiness</option>
-							<option>UI/UX Design</option>
-							<option>Online Services</option>
-						</select>
-						
-					</div>
-                </div>
-</div>
-</div>
+                                                    <label class="bmd-label-floating">الصندوق</label>
+                                                    <div>
+                                                        <select class="form-control" name="box">
+                                                            <option>يرجى اختيار الصندوق</option>
+                                                            <option>eCommerce Bussiness</option>
+                                                            <option>UI/UX Design</option>
+                                                            <option>Online Services</option>
+                                                        </select>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
                                         <div class="row">
                                             <div class="col-md-6">
                                                 <div class="form-group">
@@ -242,7 +244,8 @@
                                             </div>
                                             <div class="col-md-4">
                                                 <div class="form-group">
-                                                <button type="button" class="btn btn-primary pull-right" id="add">اضافه</button>
+                                                    <button type="button" class="btn btn-primary pull-right"
+                                                        id="add">اضافه</button>
                                                 </div>
                                             </div>
                                         </div>
@@ -265,8 +268,8 @@
                                                                 </thead>
 
                                                                 <tbody>
-                                                                   
-</tbody>
+
+                                                                </tbody>
                                                             </table>
                                                         </div>
                                                     </div>
@@ -277,10 +280,11 @@
                                                     <div class="col-md-6">
                                                         <div class="form-group">
                                                             <label class="bmd-label-floating">المجموع</label>
-                                                            <input type="number" id="totel" class="form-control" value="0" >
+                                                            <input type="number" id="totel" class="form-control"
+                                                                value="0">
                                                         </div>
                                                     </div>
-</div>
+                                                </div>
                                                 <div class="row">
                                                     <div class="col-md-12">
                                                         <div class="form-group">
@@ -298,22 +302,23 @@
                                                     </div>
                                                     <div class="col-md-4">
                                                         <div class="form-group">
-                                                            <label class="bmd-label-floating">تاريخ الشيك/التحويل</label>
+                                                            <label class="bmd-label-floating">تاريخ
+                                                                الشيك/التحويل</label>
                                                             <input type="Date" class="form-control">
                                                         </div>
                                                     </div>
                                                     <div class="col-md-4">
                                                         <div class="form-group">
-                                                        
-					<div>
-						<select class="form-control" name="box">
-							<option>مسحوب على/ بنك</option>
-							<option>eCommerce Bussiness</option>
-							<option>UI/UX Design</option>
-							<option>Online Services</option>
-						</select>
-						
-					</div>
+
+                                                            <div>
+                                                                <select class="form-control" name="box">
+                                                                    <option>مسحوب على/ بنك</option>
+                                                                    <option>eCommerce Bussiness</option>
+                                                                    <option>UI/UX Design</option>
+                                                                    <option>Online Services</option>
+                                                                </select>
+
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
