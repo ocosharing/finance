@@ -16,16 +16,24 @@ class recept_controller extends CI_Controller{
         $this->load->view('pages/recept/notaccept',$data);
     }
     public function create_box(){
-        $boxname = $this->input->post('boxname');
+        $boxname = $this->input->post('box_name');
         $this->load->model('box_model');
         $create = $this->box_model->create($boxname);
         if($create){
-            $date['succ']="لقد تم اضافة الصندوق بنجاح";
-            $this->load->view('pages/recept/receipt_control',$data);
+         $data['succ']="لقد تم اضافة الصندوق بنجاح";
+        $this->load->model('box_model');
+        $data['box']= $this->box_model->show();
+        $this->load->view('templet/header');
+        $this->load->view('pages/recept/receipt_control',$data);
+        $this->load->view('templet/footer');
            
         }else{
-            $date['error']="خطأ لا يمكن حفظ  الصندوق";
-            $this->load->view('pages/recept/receipt_control',$data);
+            $data['error']="خطأ لا يمكن حفظ  الصندوق";
+            $this->load->model('box_model');
+        $data['box']= $this->box_model->show();
+        $this->load->view('templet/header');
+        $this->load->view('pages/recept/receipt_control',$data);
+        $this->load->view('templet/footer');
         }
         
     }

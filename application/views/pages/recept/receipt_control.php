@@ -27,6 +27,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
     <!-- CSS Files -->
     <link href="../assets/css/material-dashboard.css?v=2.1.0" rel="stylesheet" />
+    <link href="../assets/css/dataTables.min.css" rel="stylesheet" />
     <link href="../assets/css/material-dashboard-rtl.css?v=1.1" rel="stylesheet" />
     <!-- CSS Just for demo purpose, don't include it in your project -->
     <link href="../assets/demo/demo.css" rel="stylesheet" />
@@ -189,7 +190,7 @@
                                         data-target="#myModal">إضافة صندوق </a></p>
                             </div>
                             <div class="card-body table-responsive">
-                                <table class="table table-hover">
+                                <table class="table table-hover" id="boxtable">
                                     <thead class="text-warning">
                                         <center>
                                             <th>رقم الصندوق</th>
@@ -198,9 +199,10 @@
                                         </center>
                                     </thead>
                                     <tbody>
+                                        <?php foreach($box as $boxs){ ?>
                                         <tr>
-                                            <td>1</td>
-                                            <td>Dakota Rice</td>
+                                            <td><?php  echo $boxs['rec_type_id']; ?></td>
+                                            <td><?php  echo $boxs['rec_type_name']; ?></td>
                                             <td><button type="button" rel="tooltip" title="تعديل الصندوق"
                                                     class="btn btn-primary btn-link btn-sm">
                                                     <i class="material-icons">edit</i>
@@ -210,8 +212,8 @@
                                                     <i class="material-icons">delete</i>
                                                 </button></td>
                                         </tr>
-
-                                        </tr>
+                  <?php } ?>
+                                       
                                     </tbody>
                                 </table>
                             </div>
@@ -358,24 +360,24 @@
                 <!-- Modal body -->
                 <div class="modal-body">
                     <div class="card-body">
-                        <form method="post" action ="">
+                    <form method="POST" action="<?php echo base_url('recept_controller/create_box')?>">
                             <div class="row">
                                 <div class="col-md-12">
                                     <div class="form-group">
                                         <label class="bmd-label-floating">اسم الصندوق</label>
-                                        <input type="text" class="form-control">
+                                        <input type="text" class="form-control" name ="box_name">
                                     </div>
                                 </div>
 
                             </div>
-                        </form>
+                       
                     </div>
 
                     <!-- Modal footer -->
                     <div class="modal-footer">
                         <button type="submit" class="btn btn-success pull-left">اضافة
                             <button type="button" class="btn btn-default" data-dismiss="modal">الغاء</button>
-
+                            </form>
                     </div>
 
                 </div>
@@ -387,6 +389,7 @@
         <script src=" <?php echo base_url('assets/js/core/popper.min.js')?>" type="text/javascript"></script>
         <script src=" <?php echo base_url('assets/js/core/bootstrap-material-design.min.js')?>" type="text/javascript">
         </script>
+        <script src=" <?php echo base_url('assets/js/dataTables.min.js')?>" type="text/javascript"></script>
         <script src=" <?php echo base_url('assets/js/plugins/perfect-scrollbar.jquery.min.js')?>"></script>
         <!--  Google Maps Plugin    -->
         <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script>
@@ -415,10 +418,13 @@ $(document).ready(function() {
             $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
         });
     });
+
+  $('#boxtable').DataTable();
+});
+$(document).ready(function() {
+    $('#boxtable').DataTable();
 });
 
 
 
-
-<
-/html>
+</html>

@@ -20,8 +20,10 @@ class list_controller extends CI_Controller{
 }
     public function settings()
     {
+        $this->load->model('box_model');
+        $data['box']= $this->box_model->show();
         $this->load->view('templet/header');
-        $this->load->view('pages/recept/receipt_control');
+        $this->load->view('pages/recept/receipt_control',$data);
         $this->load->view('templet/footer');
 
     }

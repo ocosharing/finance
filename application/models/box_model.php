@@ -11,5 +11,11 @@ class box_model extends CI_Model {
                 return ($create == true ) ? true : false;
                }
     }
+    public function show(){
+        $query = $this->db->get('receipt_type');
+                return $query->result_array();
+        
+
+    }
 
 }
