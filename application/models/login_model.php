@@ -6,7 +6,7 @@ class login_model extends CI_Model{
      public function login($email , $password){
         if($email && $password) {
 			
-			$sql = "SELECT * FROM iftar.user where user_id=".$email." and user_password= ".$password.";";
+			$sql = "SELECT * FROM sae.user where user_id=".$email." and password= ".$password.";";
 			$query = $this->db->query($sql);
 
 			if($query->num_rows() == 1) {

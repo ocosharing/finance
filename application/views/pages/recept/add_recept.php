@@ -82,7 +82,7 @@
     -->
             <div class="logo">
                 <center>
-                    <img src="<?php echo base_url('asses/images/New Logo OCO-2.png')?>" width="100px" alt="IMG">
+                    <img src="<?php echo base_url('asses/images/New Logo OCO-2.png')?>" width="150px" alt="IMG">
                 </center>
             </div>
             <div class="sidebar-wrapper">
@@ -94,7 +94,7 @@
                         </a>
                     </li>
                     <li class="nav-item ">
-                        <a class="nav-link" href="./user.html">
+                    <a class="nav-link" href="<?php echo base_url('usercontroller/list')?>">
                             <i class="material-icons">person</i>
                             <p>المستخدمين</p>
                         </a>

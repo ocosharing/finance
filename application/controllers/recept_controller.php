@@ -15,5 +15,22 @@ class recept_controller extends CI_Controller{
         $data['user'] = $this->list_model->show();
         $this->load->view('pages/recept/notaccept',$data);
     }
+    public function create_box(){
+        $boxname = $this->input->post('boxname');
+        $this->load->model('box_model');
+        $create = $this->box_model->create($boxname);
+        if($create){
+            $date['succ']="لقد تم اضافة الصندوق بنجاح";
+            $this->load->view('pages/recept/receipt_control',$data);
+           
+        }else{
+            $date['error']="خطأ لا يمكن حفظ  الصندوق";
+            $this->load->view('pages/recept/receipt_control',$data);
+        }
+        
+    }
 }
+
+    
+
    

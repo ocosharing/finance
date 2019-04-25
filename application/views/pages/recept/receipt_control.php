@@ -74,7 +74,7 @@
                         </a>
                     </li>
                     <li class="nav-item ">
-                        <a class="nav-link" href="./user.html">
+                        <a class="nav-link" href="<?php echo base_url('usercontroller/list')?>">
                             <i class="material-icons">person</i>
                             <p>المستخدمين</p>
                         </a>
@@ -138,14 +138,7 @@
                             </div>
                         </form>
                         <ul class="navbar-nav">
-                            <li class="nav-item">
-                                <a class="nav-link" href="#pablo">
-                                    <i class="material-icons">dashboard</i>
-                                    <p class="d-lg-none d-md-block">
-                                        آمارها
-                                    </p>
-                                </a>
-                            </li>
+
 
                             <li class="nav-item dropdown">
                                 <a class="nav-link" href="#pablo" id="navbarDropdownProfile" data-toggle="dropdown"
@@ -175,7 +168,17 @@
                     class="btn btn-primary btn-round">السندات المرفوضه </a>
                 <a href="#pablo" class="btn btn-primary btn-round">السندات تحت الاجراء </a>
                 <a href="#pablo" class="btn btn-primary btn-round">السندات المحذوفه </a>
-                <a href="#pablo" class="btn btn-primary btn-round">لوحة التحكم بالسندات </a>
+                <a href="<?php echo base_url('list_controller/settings')?>" class="btn btn-primary btn-round">لوحة
+                    التحكم بالسندات </a>
+                  <?php  if(isset($succ)){ ?>
+                    <div class="alert alert-success">
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                      <i class="material-icons">close</i>
+                    </button>
+                    <span>
+                      <b> <?php echo $succ ?> </b></span>
+                  </div>
+                  <?php  } ?>
                 <div class="row">
                     <div class="col-lg-5">
                         <div class="card">
@@ -188,14 +191,24 @@
                             <div class="card-body table-responsive">
                                 <table class="table table-hover">
                                     <thead class="text-warning">
-                                        <th>رقم الصندوق</th>
-                                        <th> اسم الصندوق</th>
-                                        <th>الاجرائات</th>
+                                        <center>
+                                            <th>رقم الصندوق</th>
+                                            <th> اسم الصندوق</th>
+                                            <th>الاجرائات</th>
+                                        </center>
                                     </thead>
                                     <tbody>
                                         <tr>
                                             <td>1</td>
                                             <td>Dakota Rice</td>
+                                            <td><button type="button" rel="tooltip" title="تعديل الصندوق"
+                                                    class="btn btn-primary btn-link btn-sm">
+                                                    <i class="material-icons">edit</i>
+                                                </button>
+                                                <button type="button" rel="tooltip" title="حذف الصندوق"
+                                                    class="btn btn-primary btn-link btn-sm">
+                                                    <i class="material-icons">delete</i>
+                                                </button></td>
                                         </tr>
 
                                         </tr>
@@ -231,16 +244,16 @@
                                             <td> فرع مطرح</td>
                                             <td> BQ33330000</td>
                                             <td>
-                                                <button type="button" rel="tooltip" title="Edit Task"
+                                                <button type="button" rel="tooltip" title="تعديل البنك"
                                                     class="btn btn-primary btn-link btn-sm">
                                                     <i class="material-icons">edit</i>
                                                 </button>
-                                                <button type="button" rel="tooltip" title="Edit Task"
+                                                <button type="button" rel="tooltip" title="حذف البنك"
                                                     class="btn btn-primary btn-link btn-sm">
                                                     <i class="material-icons">delete</i>
                                                 </button>
-                                              
-                                              </td>
+
+                                            </td>
                                         </tr>
 
                                         </tr>
@@ -301,6 +314,21 @@
 
                             </div>
                             <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label class="bmd-label-floating">تابع للصندوق</label>
+                                        <div>
+                                            <select class="form-control" name="box">
+                                                <option>يرجى اختيار الصندوق</option>
+                                                <option>eCommerce Bussiness</option>
+                                                <option>UI/UX Design</option>
+                                                <option>Online Services</option>
+                                            </select>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
 
                         </form>
                     </div>
@@ -330,7 +358,7 @@
                 <!-- Modal body -->
                 <div class="modal-body">
                     <div class="card-body">
-                        <form>
+                        <form method="post" action ="">
                             <div class="row">
                                 <div class="col-md-12">
                                     <div class="form-group">
@@ -353,7 +381,31 @@
                 </div>
             </div>
         </div>
+        <!--   Core JS Files   -->
 
+        <script src=" <?php echo base_url('assets/js/core/jquery.min.js')?>" type="text/javascript"></script>
+        <script src=" <?php echo base_url('assets/js/core/popper.min.js')?>" type="text/javascript"></script>
+        <script src=" <?php echo base_url('assets/js/core/bootstrap-material-design.min.js')?>" type="text/javascript">
+        </script>
+        <script src=" <?php echo base_url('assets/js/plugins/perfect-scrollbar.jquery.min.js')?>"></script>
+        <!--  Google Maps Plugin    -->
+        <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script>
+        <!-- Chartist JS -->
+        <script src=" <?php echo base_url('assets/js/plugins/chartist.min.js')?>"></script>
+        <!--  Notifications Plugin    -->
+        <script src=" <?php echo base_url('assets/js/plugins/bootstrap-notify.js')?>"></script>
+        <!-- Control Center for Material Dashboard: parallax effects, scripts for the example pages etc -->
+        <script src=" <?php echo base_url('assets/js/material-dashboard.min.js?v=2.1.0')?>" type="text/javascript">
+        </script>
+        <!-- Material Dashboard DEMO methods, don't include it in your project! -->
+        <script src=" <?php echo base_url('assets/demo/demo.js')?>"></script>
+        <script>
+        $(document).ready(function() {
+            // Javascript method's body can be found in assets/js/demos.js
+            md.initDashboardPageCharts();
+
+        });
+        </script>
 </body>
 <script>
 $(document).ready(function() {

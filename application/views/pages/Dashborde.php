@@ -65,7 +65,7 @@
             </a>
           </li>
           <li class="nav-item ">
-            <a class="nav-link" href="./user.html">
+            <a class="nav-link" href="<?php echo base_url('usercontroller/list')?>">
               <i class="material-icons">person</i>
               <p>المستخدمين</p>
             </a>
@@ -164,7 +164,7 @@
               <div class="card card-stats">
                 <div class="card-header card-header-warning card-header-icon">
                   <div class="card-icon">
-                    <i class="material-icons">content_copy</i>
+                    <i class="material-icons">list_alt</i>
                   </div>
                   <p class="card-category">سند الصرف</p>
                   <h3 class="card-title">9
@@ -185,7 +185,7 @@
               <div class="card card-stats">
                 <div class="card-header card-header-success card-header-icon">
                   <div class="card-icon">
-                    <i class="material-icons">store</i>
+                    <i class="material-icons">poll</i>
                   </div>
                   <p class="card-category">سند قبض</p>
                   <h3 class="card-title">$34,245</h3>
@@ -201,9 +201,9 @@
               <div class="card card-stats">
                 <div class="card-header card-header-danger card-header-icon">
                   <div class="card-icon">
-                    <i class="material-icons">info_outline</i>
+                    <i class="material-icons">person</i>
                   </div>
-                  <p class="card-category">اصدر الشيكات</p>
+                  <p class="card-category">المستخدمين</p>
                   <h3 class="card-title">75</h3>
                 </div>
                 <div class="card-footer">
@@ -231,7 +231,7 @@
             </div>
           </div>
           
-          <div class="col-md-12">
+          <div class="col-md-13">
               <div class="card card-profile">
                 <div class="card-avatar">
                   <a href="#pablo">

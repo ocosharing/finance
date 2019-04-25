@@ -81,7 +81,7 @@ p {
 	
 	<img src="<?php echo base_url('asses/images/New Logo OCO-1.png')?>" width="300px" alt="IMG">
 	
-		<h1><?php echo $heading; ?></h1>
+		<h1><?php echo "خطأ 404 الصفحة غير موجودة"; ?></h1>
 		<?php echo $message; ?>
 	</div>
 	</div>

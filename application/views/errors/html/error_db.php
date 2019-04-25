@@ -56,9 +56,18 @@ p {
 </style>
 </head>
 <body>
+<center>
 	<div id="container">
-		<h1><?php echo $heading; ?></h1>
+	<div class="limiter">
+	
+	<img src="<?php echo base_url('asses/images/New Logo OCO-1.png')?>" width="300px" alt="IMG">
+	
+		<h1><?php echo "خطأ 500 في الخادم"; ?></h1>
 		<?php echo $message; ?>
+	</div>
+	</div>
+	</center>
+	</div>
 	</div>
 </body>
 </html>
