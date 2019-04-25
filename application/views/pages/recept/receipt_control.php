@@ -190,7 +190,8 @@
                                         data-target="#myModal">إضافة صندوق </a></p>
                             </div>
                             <div class="card-body table-responsive">
-                                <table class="table table-hover" id="boxtable">
+                            <input class="form-control" id="myInput" type="text" placeholder="Search..">
+                                <table class="table table-hover" id="Mytable">
                                     <thead class="text-warning">
                                         <center>
                                             <th>رقم الصندوق</th>
@@ -414,17 +415,15 @@
 $(document).ready(function() {
     $("#myInput").on("keyup", function() {
         var value = $(this).val().toLowerCase();
-        $("#myTable tr").filter(function() {
+        $("#Mytable tr").filter(function() {
             $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
         });
     });
-
-  $('#boxtable').DataTable();
 });
 $(document).ready(function() {
     $('#boxtable').DataTable();
 });
 
-
+</script>
 
 </html>
