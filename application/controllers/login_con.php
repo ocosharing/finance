@@ -25,9 +25,7 @@ class login_con extends CI_Controller
         $login = $this->login_model->login($this->input->post('id'), $this->input->post('pass'));
 
         if($login) {
-         $logged_in_sess = $login['user_name'];
-          $this->session->set_userdata('username',$logged_in_sess);
-          $data['check']=true; 
+        
           redirect('dashborde', 'refresh');
         }
         else

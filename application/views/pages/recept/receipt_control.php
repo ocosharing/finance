@@ -27,7 +27,9 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
     <!-- CSS Files -->
     <link href="../assets/css/material-dashboard.css?v=2.1.0" rel="stylesheet" />
-    <link href="../assets/css/dataTables.min.css" rel="stylesheet" />
+
+    <link rel="stylesheet" href="http://cdn.datatables.net/1.10.2/css/jquery.dataTables.min.css">
+    </style>
     <link href="../assets/css/material-dashboard-rtl.css?v=1.1" rel="stylesheet" />
     <!-- CSS Just for demo purpose, don't include it in your project -->
     <link href="../assets/demo/demo.css" rel="stylesheet" />
@@ -63,7 +65,7 @@
     -->
             <div class="logo">
                 <center>
-                    <img src="<?php echo base_url('asses/images/New Logo OCO-2.png')?>" width="100px" alt="IMG">
+                    <img src="<?php echo base_url('asses/images/New Logo OCO-2.png')?>" width="150px" alt="IMG">
                 </center>
             </div>
             <div class="sidebar-wrapper">
@@ -171,15 +173,15 @@
                 <a href="#pablo" class="btn btn-primary btn-round">السندات المحذوفه </a>
                 <a href="<?php echo base_url('list_controller/settings')?>" class="btn btn-primary btn-round">لوحة
                     التحكم بالسندات </a>
-                  <?php  if(isset($succ)){ ?>
-                    <div class="alert alert-success">
+                <?php  if(isset($succ)){ ?>
+                <div class="alert alert-success">
                     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                      <i class="material-icons">close</i>
+                        <i class="material-icons">close</i>
                     </button>
                     <span>
-                      <b> <?php echo $succ ?> </b></span>
-                  </div>
-                  <?php  } ?>
+                        <b> <?php echo $succ ?> </b></span>
+                </div>
+                <?php  } ?>
                 <div class="row">
                     <div class="col-lg-5">
                         <div class="card">
@@ -190,8 +192,8 @@
                                         data-target="#myModal">إضافة صندوق </a></p>
                             </div>
                             <div class="card-body table-responsive">
-                            <input class="form-control" id="myInput" type="text" placeholder="Search..">
-                                <table class="table table-hover" id="Mytable">
+
+                                <table class="table table-hover" id="Mytab">
                                     <thead class="text-warning">
                                         <center>
                                             <th>رقم الصندوق</th>
@@ -213,8 +215,8 @@
                                                     <i class="material-icons">delete</i>
                                                 </button></td>
                                         </tr>
-                  <?php } ?>
-                                       
+                                        <?php } ?>
+
                                     </tbody>
                                 </table>
                             </div>
@@ -323,9 +325,11 @@
                                         <div>
                                             <select class="form-control" name="box">
                                                 <option>يرجى اختيار الصندوق</option>
-                                                <option>eCommerce Bussiness</option>
-                                                <option>UI/UX Design</option>
-                                                <option>Online Services</option>
+                                                <?php foreach($box as $boxs){ ?>
+                                                <option value="<?php  echo $boxs['rec_type_id']; ?>">
+                                                    <?php  echo $boxs['rec_type_name']; ?></option>
+                                                <?php } ?>
+
                                             </select>
 
                                         </div>
@@ -361,17 +365,17 @@
                 <!-- Modal body -->
                 <div class="modal-body">
                     <div class="card-body">
-                    <form method="POST" action="<?php echo base_url('recept_controller/create_box')?>">
+                        <form method="POST" action="<?php echo base_url('recept_controller/create_box')?>">
                             <div class="row">
                                 <div class="col-md-12">
                                     <div class="form-group">
                                         <label class="bmd-label-floating">اسم الصندوق</label>
-                                        <input type="text" class="form-control" name ="box_name">
+                                        <input type="text" class="form-control" name="box_name">
                                     </div>
                                 </div>
 
                             </div>
-                       
+
                     </div>
 
                     <!-- Modal footer -->
@@ -390,7 +394,9 @@
         <script src=" <?php echo base_url('assets/js/core/popper.min.js')?>" type="text/javascript"></script>
         <script src=" <?php echo base_url('assets/js/core/bootstrap-material-design.min.js')?>" type="text/javascript">
         </script>
-        <script src=" <?php echo base_url('assets/js/dataTables.min.js')?>" type="text/javascript"></script>
+        <script type="text/javascript" src="http://cdn.datatables.net/1.10.2/js/jquery.dataTables.min.js"></script>
+        <script type="text/javascript" src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js">
+        </script>
         <script src=" <?php echo base_url('assets/js/plugins/perfect-scrollbar.jquery.min.js')?>"></script>
         <!--  Google Maps Plugin    -->
         <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script>
@@ -415,15 +421,13 @@
 $(document).ready(function() {
     $("#myInput").on("keyup", function() {
         var value = $(this).val().toLowerCase();
-        $("#Mytable tr").filter(function() {
+        $("#Mytab tr").filter(function() {
             $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
         });
     });
-});
-$(document).ready(function() {
-    $('#boxtable').DataTable();
-});
 
+    $('#Mytab').DataTable();
+});
 </script>
 
 </html>
