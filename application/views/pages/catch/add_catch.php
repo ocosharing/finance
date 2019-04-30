@@ -99,13 +99,13 @@
                             <p>المستخدمين</p>
                         </a>
                     </li>
-                    <li class="nav-item active ">
+                    <li class="nav-item ">
                         <a class="nav-link" href="<?php echo base_url('list_controller/shows')?>">
                             <i class="material-icons">content_paste</i>
                             <p>سند صرف</p>
                         </a>
                     </li>
-                    <li class="nav-item ">
+                    <li class="nav-item active">
                         <a class="nav-link" href="<?php echo base_url('list_controller/showCatchList')?>">
                             <i class="material-icons">library_books</i>
                             <p>سند قبض</p>
@@ -194,150 +194,41 @@
                         <div class="col-md-12">
                             <div class="card">
                                 <div class="card-header card-header-primary">
-                                    <h4 class="card-title">سند صرف جديد</h4>
-                                    <p class="card-category">استخراج سندات الصرف من هنا</p>
+                                    <h4 class="card-title">سند قبض جديد</h4>
                                 </div>
                                 <div class="card-body">
                                     <form>
                                         <div class="row">
-                                            <div class="col-md-6">
+                                            <div class="col-md-12">
                                                 <div class="form-group">
-                                                    <label class="bmd-label-floating">الصندوق</label>
-                                                    <div>
-                                                        <select class="form-control" name="box">
-                                                            <option>يرجى اختيار الصندوق</option>
-                                                            <option>eCommerce Bussiness</option>
-                                                            <option>UI/UX Design</option>
-                                                            <option>Online Services</option>
-                                                        </select>
-
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <div class="form-group">
-                                                    <label class="bmd-label-floating">اسم المستفيد</label>
+                                                    <label class="bmd-label-floating">اسم المستلم منه</label>
                                                     <input type="text" class="form-control">
                                                 </div>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <div class="form-group">
-                                                    <label class="bmd-label-floating">عنوان المستفيد</label>
-                                                    <input type="text" class="form-control">
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-md-4">
-                                                <div class="form-group">
-                                                    <label class="bmd-label-floating">البيان</label>
-                                                    <input type="text" class="form-control" id="dec">
-                                                </div>
-                                            </div>
-                                            <div class="col-md-4">
                                                 <div class="form-group">
                                                     <label class="bmd-label-floating">المبلغ</label>
-                                                    <input type="number" class="form-control" id="price">
+                                                    <input type="number" class="form-control">
                                                 </div>
-                                            </div>
-                                            <div class="col-md-4">
                                                 <div class="form-group">
-                                                    <button type="button" class="btn btn-primary pull-right"
-                                                        id="add">اضافه</button>
+                                                    <label class="bmd-label-floating">البنك</label>
+                                                    <input type="text" class="form-control">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="bmd-label-floating">التاريخ</label>
+                                                    <input type="date" class="form-control">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="bmd-label-floating">رقم الشيك</label>
+                                                    <input type="number" class="form-control">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="bmd-label-floating">الغرض من السند</label>
+                                                    <input type="text" class="form-control">
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="row">
-                                            <div class="col-md-12">
-                                                <div class="card">
 
-                                                    <div class="card-body">
-                                                        <div class="table-responsive">
-                                                            <table class="table" id="mytable">
-                                                                <thead class=" text-primary">
-                                                                    <tr class="row100 head"> </tr>
-                                                                    <tr class="row100 head">
-                                                                        <th class="cell100 column1">البيان</th>
-                                                                        <th class="cell100 column2"></th>
-
-                                                                        <th class="cell100 column3">المبلغ</th>
-
-                                                                    </tr>
-                                                                </thead>
-
-                                                                <tbody>
-
-                                                                </tbody>
-                                                            </table>
-                                                        </div>
-                                                    </div>
-                                                </div>
-
-
-                                                <div class="row">
-                                                    <div class="col-md-6">
-                                                        <div class="form-group">
-                                                            <label class="bmd-label-floating">المجموع</label>
-                                                            <input type="number" id="totel" class="form-control"
-                                                                value="0">
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="row">
-                                                    <div class="col-md-12">
-                                                        <div class="form-group">
-                                                            <label class="bmd-label-floating">المبلغ بالحروف</label>
-                                                            <input type="text" class="form-control">
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="row">
-                                                    <div class="col-md-4">
-                                                        <div class="form-group">
-                                                            <label class="bmd-label-floating">رقم الشيك/ التحويل</label>
-                                                            <input type="text" class="form-control">
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-md-4">
-                                                        <div class="form-group">
-                                                            <label class="bmd-label-floating">تاريخ
-                                                                الشيك/التحويل</label>
-                                                            <input type="Date" class="form-control">
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-md-4">
-                                                        <div class="form-group">
-
-                                                            <div>
-                                                                <select class="form-control" name="box">
-                                                                    <option>مسحوب على/ بنك</option>
-                                                                    <option>eCommerce Bussiness</option>
-                                                                    <option>UI/UX Design</option>
-                                                                    <option>Online Services</option>
-                                                                </select>
-
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="row">
-                                                    <div class="col-md-12">
-                                                        <div class="form-group">
-                                                            <label>About Me</label>
-                                                            <div class="form-group">
-                                                                <label class="bmd-label-floating"> Lamborghini Mercy,
-                                                                    Your chick she so thirsty, I'm in that two seat
-                                                                    Lambo.</label>
-                                                                <textarea class="form-control" rows="5"></textarea>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <button type="submit" class="btn btn-primary pull-right">Update
-                                                    Profile</button>
-                                                <div class="clearfix"></div>
+                                        <button type="submit" class="btn btn-primary pull-right">اضافة السند</button>
+                                        <div class="clearfix"></div>
                                     </form>
                                 </div>
                             </div>
@@ -348,36 +239,12 @@
             </div>
             <footer class="footer">
                 <div class="container-fluid">
-                    <nav class="float-left">
-                        <ul>
-                            <li>
-                                <a href="https://www.creative-tim.com">
-                                    Creative Tim
-                                </a>
-                            </li>
-                            <li>
-                                <a href="https://creative-tim.com/presentation">
-                                    About Us
-                                </a>
-                            </li>
-                            <li>
-                                <a href="http://blog.creative-tim.com">
-                                    Blog
-                                </a>
-                            </li>
-                            <li>
-                                <a href="https://www.creative-tim.com/license">
-                                    Licenses
-                                </a>
-                            </li>
-                        </ul>
-                    </nav>
                     <div class="copyright float-right">
+                    كل الحقوق محفوظة لدى الهيئة العمانية للأعمال الخيرية
                         &copy;
                         <script>
-                        document.write(new Date().getFullYear())
-                        </script>, made with <i class="material-icons">favorite</i> by
-                        <a href="https://www.creative-tim.com" target="_blank">Creative Tim</a> for a better web.
+                            document.write(new Date().getFullYear())
+                        </script> 
                     </div>
                 </div>
             </footer>

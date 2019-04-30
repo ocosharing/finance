@@ -10,6 +10,11 @@ class recept_controller extends CI_Controller{
     public function create(){
         $this->load->view('pages/recept/add_recept');
     }
+    
+    public function create_add_catch() {
+        $this->load->view('pages/catch/add_catch');
+    }
+
     public function not_apprvel_recept(){
         $this->load->model('list_model');
         $data['user'] = $this->list_model->show();
