@@ -1,16 +1,11 @@
 <?php
-
-
 class login_con extends CI_Controller 
 {
     
 	public function __construct()
 	{
         parent::__construct();
-       
-       
-      
-       
+
     }
     public function index(){
         $this->load->view('templet/header');
@@ -22,7 +17,7 @@ class login_con extends CI_Controller
 	{
         $this->load->model('login_model');
        
-        $login = $this->login_model->login($this->input->post('id'), $this->input->post('pass'));
+        $login = $this->login_model->login($this->input->post('id') , $this->input->post('pass'));
 
         if($login) {
         
