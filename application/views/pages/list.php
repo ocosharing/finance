@@ -189,11 +189,11 @@
                                             <tbody id="myTable">
                                                 <?php foreach ($user as $users): ?>
                                                 <tr class="row100 body">
-                                                    <td class="cell100 column1"> <?php echo $users['user_id'] ?></td>
-                                                    <td class="cell100 column2"><?php echo $users['user_name'] ?></td>
-                                                    <td class="cell100 column3"><?php echo $users['user_email'] ?></td>
-                                                    <td class="cell100 column4"><?php echo $users['user_phone'] ?></td>
-                                                    <td class="cell100 column5"><?php echo $users['user_password'] ?>
+                                                    <td class="cell100 column1"> 25</td>
+                                                    <td class="cell100 column2">العام</td>
+                                                    <td class="cell100 column3">30/04/2019</td>
+                                                    <td class="cell100 column4">غانم المرزوقي</td>
+                                                    <td class="cell100 column5">120 ريال عماني
                                                     </td>
                                                     <td class="cell100 column5">
                                                         <button type="button" rel="tooltip" title="Edit Task"

@@ -192,7 +192,7 @@
                 </div>
                 <div class="card-footer">
                   <div class="stats">
-                    <i class="material-icons">date_range</i>۲۴ ساعت اخیر
+                    <i class="material-icons">date_range</i>23 اخر تحديث
                   </div>
                 </div>
               </div>
@@ -208,7 +208,7 @@
                 </div>
                 <div class="card-footer">
                   <div class="stats">
-                    <i class="material-icons">local_offer</i> توسط گیت‌هاب
+                    <i class="material-icons">local_offer</i>مستخدم داخلي
                   </div>
                 </div>
               </div>
@@ -224,7 +224,7 @@
                 </div>
                 <div class="card-footer">
                   <div class="stats">
-                    <i class="material-icons">update</i> هم‌اکنون
+                    <i class="material-icons">update</i> 
                   </div>
                 </div>
               </div>

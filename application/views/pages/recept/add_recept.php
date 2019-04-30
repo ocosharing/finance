@@ -94,7 +94,7 @@
                         </a>
                     </li>
                     <li class="nav-item ">
-                    <a class="nav-link" href="<?php echo base_url('usercontroller/list')?>">
+                        <a class="nav-link" href="<?php echo base_url('usercontroller/list')?>">
                             <i class="material-icons">person</i>
                             <p>المستخدمين</p>
                         </a>
@@ -335,7 +335,8 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <button type="submit" class="btn btn-primary pull-right">Update
+                                                <button type="button" class="btn btn-primary pull-right"
+                                                    data-toggle="modal" data-target="#myModal">Update
                                                     Profile</button>
                                                 <div class="clearfix"></div>
                                     </form>
@@ -385,6 +386,132 @@
     </div>
     </div>
     </div>
+    
+    </div>
+    
+    </div>
+    <!-- The Modal -->
+    <div class="modal fade" id="myModal">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <h4 class="modal-title">عرض السند</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+
+                <!-- Modal body -->
+                <div class="modal-body" >
+                    <center>
+                        <img src="<?php echo base_url('asses/images/haed.jpg')?>" width="700px" alt="IMG">
+                        <table style="width: 400px;" border="0">
+                            <tbody>
+                                <tr>
+
+                                    <td style="padding-left: 30px; width: 532.4px;">
+                                        <h2
+                                            style="text-align: center;  font-family:'Droid Arabic Naskh', serif; line-height:60px; ">
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </center>
+                    <table align="left">
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <br>
+                                    <br>
+                                    <p class="text-left"> الرقم 25</p>
+                                    <p style=""> التاريخ 30-04-2019</p>
+                                </td>
+                            </tr>
+                        </tbody>
+
+                    </table>
+                    <Br>
+                    <Br>
+                    <table style="width: 564.4px;">
+                        <tbody>
+                            <tr>
+                                <td style="width: 557.4px;">
+                                    <p style="text-align: right;">اسم المستفيد: غانم المرزوقي</p>
+                                    <p style="text-align: right;">عنوان المستفيد: السويق</p>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <center>
+                        <table style="width: 586px;" border="1">
+                            <tbody>
+                                <tr>
+                                    <td style="width: 445px;" rowspan="2">
+                                        <h3 style="font-family: 'Lateef', serif; line-height:60px; font-size:30px"
+                                            align="center">البيــــــــــــــــــــــــان</h3>
+                                    </td>
+                                    <td style="width: 168px; text-align: center;" colspan="2">
+                                        <h3>المبلغ</h3>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="width: 76px;">&nbsp;</td>
+                                    <td style="width: 92px;">&nbsp;</td>
+                                </tr>
+                                <tr>
+                                    <td style="width: 445px;">جهاز</td>
+                                    <td style="width: 76px;">120</td>
+                                    <td style="width: 92px;"></td>
+                                </tr>
+
+                            </tbody>
+                        </table>
+                    </center>
+                    <h5 style="text-align: right;"><strong>المبلغ بالحروف: مئة وعشرون ريال عماني</strong></h5>
+                    <center>
+                        <table style="height: 64px;" border="1" width="586px">
+                            <tbody>
+                                <tr>
+                                    <td style="width: 180.8px; text-align: center;">رقم الشيك/ التحويل</td>
+                                    <td style="width: 182.4px; text-align: center;">تاريخ الشيك/ التحويل</td>
+                                    <td style="width: 183.2px; text-align: center;">مسحوب على /بنك</td>
+                                </tr>
+                                <tr>
+                                    <td style="width: 180.8px;">1</td>
+                                    <td style="width: 182.4px;">30/04/2019</td>
+                                    <td style="width: 183.2px;">مسقط</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <br>
+                        <br>
+                        <table border="0" style="height: 20px; width: 100%; border-collapse: collapse;">
+                            <tbody>
+                                <tr style="height: 20px;">
+                                    <td style="width: 33.3333%; height: 20px; text-align: center;">
+                                        <strong>اعده عبدالحميد الفارسي</strong></td>
+                                    <td style="width: 33.3333%; height: 20px; text-align: center;"><strong>تصديق
+                                            المالي</strong></td>
+                                    <td style="width: 33.3333%; height: 20px; text-align: center;">
+                                        <strong>المراجعة والتدقيق</strong></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </center>
+                    <div>
+                    </div>
+
+                    <!-- Modal footer -->
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button id="btnPrint" type="button" class="btn btn-default">Print</button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+   
     <!--   Core JS Files   -->
     <script src="../assets/js/core/jquery.min.js"></script>
     <script src="../assets/js/core/popper.min.js"></script>
@@ -428,7 +555,9 @@
     <script src="../assets/js/material-dashboard.js?v=2.1.1" type="text/javascript"></script>
     <!-- Material Dashboard DEMO methods, don't include it in your project! -->
     <script src="../assets/demo/demo.js"></script>
+    <script>
 
+    </script>
 </body>
 
 </html>
