@@ -89,7 +89,7 @@
                         </a>
                     </li>
                     <li class="nav-item ">
-                        <a class="nav-link" href="./typography.html">
+                        <a class="nav-link" href="<?php echo base_url('list_controller/showCatchList')?>">
                             <i class="material-icons">library_books</i>
                             <p>سند قبض</p>
                         </a>

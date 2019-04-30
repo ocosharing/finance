@@ -10,6 +10,31 @@
     <title>
         نظام القبض والصرف
     </title>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+
+    <script type="text/javascript">
+    $(document).ready(function() {
+        $('#add').click(function() {
+            var dec = $('#dec').val();
+            var price = $('#price').val();
+            var nmm = $('#totel').val();
+            var answer = parseFloat(nmm) + parseFloat(price);
+            $('#totel').val(answer);
+            var markup = ' <tr><td> <input type="text"  class="form-control" value="' + dec +
+                '"></td><td></td><td><input type="text" name ="" class="form-control" value=' + price +
+                ' ></td></tr>';
+            $('table tbody').append(markup);
+
+
+
+            $('#dec').val("");
+            $('#price').val("");
+        });
+
+
+    });
+    </script>
+
     <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no'
         name='viewport' />
     <!--     Fonts and icons     -->
@@ -74,13 +99,13 @@
                             <p>المستخدمين</p>
                         </a>
                     </li>
-                    <li class="nav-item active ">
+                    <li class="nav-item ">
                         <a class="nav-link" href="<?php echo base_url('list_controller/shows')?>">
                             <i class="material-icons">content_paste</i>
                             <p>سند صرف</p>
                         </a>
                     </li>
-                    <li class="nav-item ">
+                    <li class="nav-item active">
                         <a class="nav-link" href="<?php echo base_url('list_controller/showCatchList')?>">
                             <i class="material-icons">library_books</i>
                             <p>سند قبض</p>
@@ -113,7 +138,7 @@
             <nav class="navbar navbar-expand-lg navbar-transparent navbar-absolute fixed-top ">
                 <div class="container-fluid">
                     <div class="navbar-wrapper">
-                        <a class="navbar-brand" href="#pablo">سند صرف </a>
+                        <a class="navbar-brand" href="#pablo">لوحة التحكم</a>
                     </div>
                     <button class="navbar-toggler" type="button" data-toggle="collapse" aria-controls="navigation-index"
                         aria-expanded="false" aria-label="Toggle navigation">
@@ -133,7 +158,14 @@
                             </div>
                         </form>
                         <ul class="navbar-nav">
-
+                            <li class="nav-item">
+                                <a class="nav-link" href="#pablo">
+                                    <i class="material-icons">dashboard</i>
+                                    <p class="d-lg-none d-md-block">
+                                        آمارها
+                                    </p>
+                                </a>
+                            </li>
 
                             <li class="nav-item dropdown">
                                 <a class="nav-link" href="#pablo" id="navbarDropdownProfile" data-toggle="dropdown"
@@ -155,94 +187,115 @@
                 </div>
             </nav>
 
+
             <div class="content">
-                <a href="<?php echo base_url('recept_controller/create')?>" class="btn btn-primary btn-round">اضافة
-                    سند</a>
-                <a href="#pablo" class="btn btn-primary btn-round">السندات الموافقه </a>
-                <a href="<?php echo base_url('recept_controller/not_apprvel_recept')?>"
-                    class="btn btn-primary btn-round">السندات المرفوضه </a>
-                <a href="#pablo" class="btn btn-primary btn-round">السندات تحت الاجراء </a>
-                <a href="#pablo" class="btn btn-primary btn-round">السندات المحذوفه </a>
-                <a href="<?php echo base_url('list_controller/settings')?>" class="btn btn-primary btn-round">لوحة
-                    التحكم بالسندات </a>
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-md-12">
                             <div class="card">
                                 <div class="card-header card-header-primary">
-                                    <h4 class="card-title ">سندات الصرف </h4>
-                                    <p class="card-category"> جميع سندات الصرف المرفوضه </p>
+                                    <h4 class="card-title">سند قبض جديد</h4>
                                 </div>
                                 <div class="card-body">
-                                    <div class="table-responsive">
-                                        <table class="table">
-                                            <thead class=" text-primary">
-                                                <tr class="row100 head">
-                                                    <th class="cell100 column1">رقم السند</th>
-                                                    <th class="cell100 column2">تابع للصندوق</th>
-                                                    <th class="cell100 column3">التاريخ</th>
-                                                    <th class="cell100 column4">المستفيد</th>
-                                                    <th class="cell100 column5">المجموع</th>
-                                                    <th class="cell100 column5">الاجرائات</th>
-                                                </tr>
-                                            </thead>
+                                    <form>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="form-group">
+                                                    <label class="bmd-label-floating">اسم المستلم منه</label>
+                                                    <input type="text" class="form-control">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="bmd-label-floating">المبلغ</label>
+                                                    <input type="number" class="form-control">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="bmd-label-floating">البنك</label>
+                                                    <input type="text" class="form-control">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="bmd-label-floating">التاريخ</label>
+                                                    <input type="date" class="form-control">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="bmd-label-floating">رقم الشيك</label>
+                                                    <input type="number" class="form-control">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="bmd-label-floating">الغرض من السند</label>
+                                                    <input type="text" class="form-control">
+                                                </div>
+                                            </div>
+                                        </div>
 
-                                            <tbody>
-                                                <?php foreach ($user as $users): ?>
-                                                <tr class="row100 body">
-                                                    <td class="cell100 column1"> <?php echo $users['user_id'] ?></td>
-                                                    <td class="cell100 column2"><?php echo $users['user_name'] ?></td>
-                                                    <td class="cell100 column3"><?php echo $users['user_email'] ?></td>
-                                                    <td class="cell100 column4"><?php echo $users['user_phone'] ?></td>
-                                                    <td class="cell100 column5"><?php echo $users['user_password'] ?>
-                                                    </td>
-                                                    <td class="cell100 column5">
-                                                        <button type="button" rel="tooltip" title="Edit Task"
-                                                            class="btn btn-primary btn-link btn-sm">
-                                                            <i class="material-icons">edit</i>
-                                                        </button>
-                                                        <button type="button" rel="tooltip" title="view"
-                                                            class="btn btn-success btn-link btn-sm">
-                                                            <i class="material-icons">visibility</i>
-                                                        </button></td>
-                                                </tr>
-                                                <?php endforeach ?>
-
-
-                                            <tbody>
-                                        </table>
-                                    </div>
+                                        <button type="submit" class="btn btn-primary pull-right">اضافة السند</button>
+                                        <div class="clearfix"></div>
+                                    </form>
                                 </div>
                             </div>
                         </div>
+
                     </div>
                 </div>
             </div>
-            <!--   Core JS Files   -->
+            <footer class="footer">
+                <div class="container-fluid">
+                    <div class="copyright float-right">
+                    كل الحقوق محفوظة لدى الهيئة العمانية للأعمال الخيرية
+                        &copy;
+                        <script>
+                            document.write(new Date().getFullYear())
+                        </script> 
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+    </div>
+    </div>
+    <!--   Core JS Files   -->
+    <script src="../assets/js/core/jquery.min.js"></script>
+    <script src="../assets/js/core/popper.min.js"></script>
+    <script src="../assets/js/core/bootstrap-material-design.min.js"></script>
+    <script src="../assets/js/plugins/perfect-scrollbar.jquery.min.js"></script>
+    <!-- Plugin for the momentJs  -->
+    <script src="../assets/js/plugins/moment.min.js"></script>
+    <!--  Plugin for Sweet Alert -->
+    <script src="../assets/js/plugins/sweetalert2.js"></script>
+    <!-- Forms Validations Plugin -->
+    <script src="../assets/js/plugins/jquery.validate.min.js"></script>
+    <!-- Plugin for the Wizard, full documentation here: https://github.com/VinceG/twitter-bootstrap-wizard -->
+    <script src="../assets/js/plugins/jquery.bootstrap-wizard.js"></script>
+    <!--	Plugin for Select, full documentation here: http://silviomoreto.github.io/bootstrap-select -->
+    <script src="../assets/js/plugins/bootstrap-selectpicker.js"></script>
+    <!--  Plugin for the DateTimePicker, full documentation here: https://eonasdan.github.io/bootstrap-datetimepicker/ -->
+    <script src="../assets/js/plugins/bootstrap-datetimepicker.min.js"></script>
+    <!--  DataTables.net Plugin, full documentation here: https://datatables.net/  -->
+    <script src="../assets/js/plugins/jquery.dataTables.min.js"></script>
+    <!--	Plugin for Tags, full documentation here: https://github.com/bootstrap-tagsinput/bootstrap-tagsinputs  -->
+    <script src="../assets/js/plugins/bootstrap-tagsinput.js"></script>
+    <!-- Plugin for Fileupload, full documentation here: http://www.jasny.net/bootstrap/javascript/#fileinput -->
+    <script src="../assets/js/plugins/jasny-bootstrap.min.js"></script>
+    <!--  Full Calendar Plugin, full documentation here: https://github.com/fullcalendar/fullcalendar    -->
+    <script src="../assets/js/plugins/fullcalendar.min.js"></script>
+    <!-- Vector Map plugin, full documentation here: http://jvectormap.com/documentation/ -->
+    <script src="../assets/js/plugins/jquery-jvectormap.js"></script>
+    <!--  Plugin for the Sliders, full documentation here: http://refreshless.com/nouislider/ -->
+    <script src="../assets/js/plugins/nouislider.min.js"></script>
+    <!-- Include a polyfill for ES6 Promises (optional) for IE11, UC Browser and Android browser support SweetAlert -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/core-js/2.4.1/core.js"></script>
+    <!-- Library for adding dinamically elements -->
+    <script src="../assets/js/plugins/arrive.min.js"></script>
+    <!--  Google Maps Plugin    -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script>
+    <!-- Chartist JS -->
+    <script src="../assets/js/plugins/chartist.min.js"></script>
+    <!--  Notifications Plugin    -->
+    <script src="../assets/js/plugins/bootstrap-notify.js"></script>
+    <!-- Control Center for Material Dashboard: parallax effects, scripts for the example pages etc -->
+    <script src="../assets/js/material-dashboard.js?v=2.1.1" type="text/javascript"></script>
+    <!-- Material Dashboard DEMO methods, don't include it in your project! -->
+    <script src="../assets/demo/demo.js"></script>
 
-            <script src=" <?php echo base_url('assets/js/core/jquery.min.js')?>" type="text/javascript"></script>
-            <script src=" <?php echo base_url('assets/js/core/popper.min.js')?>" type="text/javascript"></script>
-            <script src=" <?php echo base_url('assets/js/core/bootstrap-material-design.min.js')?>"
-                type="text/javascript"></script>
-            <script src=" <?php echo base_url('assets/js/plugins/perfect-scrollbar.jquery.min.js')?>"></script>
-            <!--  Google Maps Plugin    -->
-            <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script>
-            <!-- Chartist JS -->
-            <script src=" <?php echo base_url('assets/js/plugins/chartist.min.js')?>"></script>
-            <!--  Notifications Plugin    -->
-            <script src=" <?php echo base_url('assets/js/plugins/bootstrap-notify.js')?>"></script>
-            <!-- Control Center for Material Dashboard: parallax effects, scripts for the example pages etc -->
-            <script src=" <?php echo base_url('assets/js/material-dashboard.min.js?v=2.1.0')?>" type="text/javascript">
-            </script>
-            <!-- Material Dashboard DEMO methods, don't include it in your project! -->
-            <script src=" <?php echo base_url('assets/demo/demo.js')?>"></script>
-            <script>
-            $(document).ready(function() {
-                // Javascript method's body can be found in assets/js/demos.js
-                md.initDashboardPageCharts();
-
-            });
-            </script>
 </body>
 
 </html>

@@ -27,19 +27,19 @@
 
     <!-- Style Just for persian demo purpose, don't include it in your project -->
     <style>
-    body,
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6,
-    .h1,
-    .h2,
-    .h3,
-    .h4 {
-        font-family: "Cairo";
-    }
+        body,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6,
+        .h1,
+        .h2,
+        .h3,
+        .h4 {
+            font-family: "Cairo";
+        }
     </style>
 </head>
 
@@ -71,13 +71,13 @@
                             <p>المستخدمين</p>
                         </a>
                     </li>
-                    <li class="nav-item active ">
+                    <li class="nav-item ">
                         <a class="nav-link" href="<?php echo base_url('list_controller/shows')?>">
                             <i class="material-icons">content_paste</i>
                             <p>سند صرف</p>
                         </a>
                     </li>
-                    <li class="nav-item ">
+                    <li class="nav-item active">
                         <a class="nav-link" href="<?php echo base_url('list_controller/showCatchList')?>">
                             <i class="material-icons">library_books</i>
                             <p>سند قبض</p>
@@ -153,23 +153,16 @@
             </nav>
 
             <div class="content">
-                <a href="<?php echo base_url('recept_controller/create')?>" class="btn btn-primary btn-round">اضافة
-                    سند</a>
-                <a href="#pablo" class="btn btn-primary btn-round">السندات الموافقه </a>
-                <a href="<?php echo base_url('recept_controller/not_apprvel_recept')?>"
-                    class="btn btn-primary btn-round">السندات المرفوضه </a>
-                <a href="#pablo" class="btn btn-primary btn-round">السندات تحت الاجراء </a>
-                <a href="#pablo" class="btn btn-primary btn-round">السندات المحذوفه </a>
-                <a href="<?php echo base_url('list_controller/settings')?>" class="btn btn-primary btn-round">لوحة
-                    التحكم بالسندات </a>
+                <a href="<?php echo base_url('recept_controller/create_add_catch')?>" class="btn btn-primary btn-round">اضافة سند</a>
+                <a href="" class="btn btn-primary btn-round">السندات المحذوفه </a>
+                <a href="" class="btn btn-primary btn-round">لوحة التحكم بالسندات </a>
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-md-12">
                             <div class="card">
                                 <div class="card-header card-header-primary">
-                                    <h4 class="card-title ">سندات الصرف </h4>
-                                    <p class="card-category"> جميع سندات الصرف الصادره </p>
-
+                                    <h4 class="card-title ">سندات القبض </h4>
+                                    <p class="card-category"> جميع سندات القبض الصادره </p>
                                 </div>
                                 <div class="card-body">
                                     <input class="form-control" id="myInput" type="text" placeholder="Search..">
@@ -177,25 +170,20 @@
                                         <table class="table">
                                             <thead class=" text-primary">
                                                 <tr class="row100 head">
-                                                    <th class="cell100 column1">رقم السند</th>
-                                                    <th class="cell100 column2">تابع للصندوق</th>
-                                                    <th class="cell100 column3">التاريخ</th>
-                                                    <th class="cell100 column4">المستفيد</th>
-                                                    <th class="cell100 column5">المجموع</th>
-                                                    <th class="cell100 column5">الاجرائات</th>
+                                                    <th>رقم السند</th>
+                                                    <th>التاريخ</th>
+                                                    <th>مستلم من</th>
+                                                    <th>المبلغ</th>
+                                                    <th>الاجرائات</th>
                                                 </tr>
                                             </thead>
-
                                             <tbody id="myTable">
-                                                <?php foreach ($user as $users): ?>
                                                 <tr class="row100 body">
-                                                    <td class="cell100 column1"> 25</td>
-                                                    <td class="cell100 column2">العام</td>
-                                                    <td class="cell100 column3">30/04/2019</td>
-                                                    <td class="cell100 column4">غانم المرزوقي</td>
-                                                    <td class="cell100 column5">120 ريال عماني
-                                                    </td>
-                                                    <td class="cell100 column5">
+                                                    <td>1</td>
+                                                    <td>1/4/2019</td>
+                                                    <td>عبد الحميد محمد الفارسي</td>
+                                                    <td>300.0</td>
+                                                    <td>
                                                         <button type="button" rel="tooltip" title="Edit Task"
                                                             class="btn btn-primary btn-link btn-sm">
                                                             <i class="material-icons">edit</i>
@@ -203,13 +191,101 @@
                                                         <button type="button" rel="tooltip" title="view"
                                                             class="btn btn-success btn-link btn-sm" data-toggle="modal"
                                                             data-target="#myModal"
-                                                            data-id="<?php echo $users['user_id'] ?>" id="view">
+                                                            data-id="" id="view">
                                                             <i class="material-icons">visibility</i>
-                                                        </button></td>
+                                                        </button>
+                                                    </td>
                                                 </tr>
-                                                <?php endforeach ?>
-
-
+                                                <tr class="row100 body">
+                                                    <td>2</td>
+                                                    <td>4/4/2019</td>
+                                                    <td>خميس الهشامي</td>
+                                                    <td>250.0</td>
+                                                    <td>
+                                                        <button type="button" rel="tooltip" title="Edit Task"
+                                                            class="btn btn-primary btn-link btn-sm">
+                                                            <i class="material-icons">edit</i>
+                                                        </button>
+                                                        <button type="button" rel="tooltip" title="view"
+                                                            class="btn btn-success btn-link btn-sm" data-toggle="modal"
+                                                            data-target="#myModal"
+                                                            data-id="" id="view">
+                                                            <i class="material-icons">visibility</i>
+                                                        </button>
+                                                    </td>
+                                                </tr>
+                                                <tr class="row100 body">
+                                                    <td>3</td>
+                                                    <td>15/4/2019</td>
+                                                    <td>يوسف الجرداني</td>
+                                                    <td>125.0</td>
+                                                    <td>
+                                                        <button type="button" rel="tooltip" title="Edit Task"
+                                                            class="btn btn-primary btn-link btn-sm">
+                                                            <i class="material-icons">edit</i>
+                                                        </button>
+                                                        <button type="button" rel="tooltip" title="view"
+                                                            class="btn btn-success btn-link btn-sm" data-toggle="modal"
+                                                            data-target="#myModal"
+                                                            data-id="" id="view">
+                                                            <i class="material-icons">visibility</i>
+                                                        </button>
+                                                    </td>
+                                                </tr>
+                                                <tr class="row100 body">
+                                                    <td>4</td>
+                                                    <td>7/4/2019</td>
+                                                    <td>عبد الحميد محمد الفارسي</td>
+                                                    <td>600.0</td>
+                                                    <td>
+                                                        <button type="button" rel="tooltip" title="Edit Task"
+                                                            class="btn btn-primary btn-link btn-sm">
+                                                            <i class="material-icons">edit</i>
+                                                        </button>
+                                                        <button type="button" rel="tooltip" title="view"
+                                                            class="btn btn-success btn-link btn-sm" data-toggle="modal"
+                                                            data-target="#myModal"
+                                                            data-id="" id="view">
+                                                            <i class="material-icons">visibility</i>
+                                                        </button>
+                                                    </td>
+                                                </tr>
+                                                <tr class="row100 body">
+                                                    <td>5</td>
+                                                    <td>22/4/2019</td>
+                                                    <td>خميس الهشامي</td>
+                                                    <td>175.0</td>
+                                                    <td>
+                                                        <button type="button" rel="tooltip" title="Edit Task"
+                                                            class="btn btn-primary btn-link btn-sm">
+                                                            <i class="material-icons">edit</i>
+                                                        </button>
+                                                        <button type="button" rel="tooltip" title="view"
+                                                            class="btn btn-success btn-link btn-sm" data-toggle="modal"
+                                                            data-target="#myModal"
+                                                            data-id="" id="view">
+                                                            <i class="material-icons">visibility</i>
+                                                        </button>
+                                                    </td>
+                                                </tr>
+                                                <tr class="row100 body">
+                                                    <td>6</td>
+                                                    <td>13/4/2019</td>
+                                                    <td>عبد الحميد محمد الفارسي</td>
+                                                    <td>320.0</td>
+                                                    <td>
+                                                        <button type="button" rel="tooltip" title="Edit Task"
+                                                            class="btn btn-primary btn-link btn-sm">
+                                                            <i class="material-icons">edit</i>
+                                                        </button>
+                                                        <button type="button" rel="tooltip" title="view"
+                                                            class="btn btn-success btn-link btn-sm" data-toggle="modal"
+                                                            data-target="#myModal"
+                                                            data-id="" id="view">
+                                                            <i class="material-icons">visibility</i>
+                                                        </button>
+                                                    </td>
+                                                </tr>
                                             <tbody>
                                         </table>
                                     </div>
@@ -241,42 +317,17 @@
                                             <td style="padding-left: 30px; width: 532.4px;">
                                                 <h2
                                                     style="text-align: center;  font-family:'Droid Arabic Naskh', serif; line-height:60px; ">
-                                                    سند صرف (للصندوق)</h2>
+                                                    سند قبض</h2>
                                             </td>
                                         </tr>
                                     </tbody>
                                 </table>
                             </center>
-                            <table align="left">
-                                <tbody>
-                                    <tr>
-                                        <td>
-                                            <br>
-                                            <br>
-                                            <p class="text-left">:الرقم</p>
-                                            <p style="">:التاريخ</p>
-                                        </td>
-                                    </tr>
-                                </tbody>
-
-                            </table>
-                            <Br>
-                            <Br>
-                            <table style="width: 564.4px;">
-                                <tbody>
-                                    <tr>
-                                        <td style="width: 557.4px;">
-                                            <p style="text-align: right;">اسم المستفيد</p>
-                                            <p style="text-align: right;">عنوان المستفيد</p>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
                             <center>
                                 <table style="width: 586px;" border="1">
                                     <tbody>
                                         <tr>
-                                            <td style="width: 445px;" rowspan="2">
+                                            <td style="width: 445px;" rowspan="1">
                                                 <h3 style="font-family: 'Lateef', serif; line-height:60px; font-size:30px"
                                                     align="center">البيــــــــــــــــــــــــان</h3>
                                             </td>
@@ -285,23 +336,14 @@
                                             </td>
                                         </tr>
                                         <tr>
-                                            <td style="width: 76px;">&nbsp;</td>
-                                            <td style="width: 92px;">&nbsp;</td>
-                                        </tr>
-                                        <tr>
-                                            <td style="width: 445px;">البان1</td>
-                                            <td style="width: 76px;">السعر</td>
-                                            <td style="width: 92px;">البيان3</td>
-                                        </tr>
-                                        <tr>
-                                            <td style="width: 445px;">&nbsp;</td>
-                                            <td style="width: 76px;">&nbsp;</td>
-                                            <td style="width: 92px;">&nbsp;</td>
+                                            <td style="width: 445px;">عبد الحميد محمد الفارسي</td>
+                                            <td class="text-center" style="width: 76px;">300</td>
+                                            <td class="text-center" style="width: 92px;">0</td>
                                         </tr>
                                     </tbody>
                                 </table>
                             </center>
-                            <h5 style="text-align: right;"><strong>المبلغ بالحروف</strong></h5>
+                            <br>
                             <center>
                                 <table style="height: 64px;" border="1" width="586px">
                                     <tbody>
@@ -311,23 +353,9 @@
                                             <td style="width: 183.2px; text-align: center;">مسحوب على /بنك</td>
                                         </tr>
                                         <tr>
-                                            <td style="width: 180.8px;">&nbsp;</td>
-                                            <td style="width: 182.4px;">&nbsp;</td>
-                                            <td style="width: 183.2px;">&nbsp;</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                                <br>
-                                <br>
-                                <table border="0" style="height: 20px; width: 100%; border-collapse: collapse;">
-                                    <tbody>
-                                        <tr style="height: 20px;">
-                                            <td style="width: 33.3333%; height: 20px; text-align: center;">
-                                                <strong>اعده&nbsp;</strong></td>
-                                            <td style="width: 33.3333%; height: 20px; text-align: center;"><strong>تصديق
-                                                    المالي</strong></td>
-                                            <td style="width: 33.3333%; height: 20px; text-align: center;">
-                                                <strong>المراجعة والتدقيق</strong></td>
+                                            <td class="text-center" style="width: 180.8px;">123456</td>
+                                            <td class="text-center" style="width: 182.4px;">1/4/2019</td>
+                                            <td class="text-center" style="width: 183.2px;">بنك مسقط</td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -344,62 +372,56 @@
                     </div>
                 </div>
 
-
-
                 <!--   Core JS Files   -->
-
                 <script src=" <?php echo base_url('assets/js/core/jquery.min.js')?>" type="text/javascript"></script>
                 <script src=" <?php echo base_url('assets/js/core/popper.min.js')?>" type="text/javascript"></script>
-                <script src=" <?php echo base_url('assets/js/core/bootstrap-material-design.min.js')?>"
-                    type="text/javascript"></script>
+                <script src=" <?php echo base_url('assets/js/core/bootstrap-material-design.min.js')?>" type="text/javascript"></script>
                 <script src=" <?php echo base_url('assets/js/plugins/perfect-scrollbar.jquery.min.js')?>"></script>
-                <!--  Google Maps Plugin    -->
-                <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script>
+
                 <!-- Chartist JS -->
                 <script src=" <?php echo base_url('assets/js/plugins/chartist.min.js')?>"></script>
+
                 <!--  Notifications Plugin    -->
                 <script src=" <?php echo base_url('assets/js/plugins/bootstrap-notify.js')?>"></script>
+
                 <!-- Control Center for Material Dashboard: parallax effects, scripts for the example pages etc -->
-                <script src=" <?php echo base_url('assets/js/material-dashboard.min.js?v=2.1.0')?>"
-                    type="text/javascript"></script>
+                <script src=" <?php echo base_url('assets/js/material-dashboard.min.js?v=2.1.0')?>" type="text/javascript"></script>
+
                 <!-- Material Dashboard DEMO methods, don't include it in your project! -->
                 <script src=" <?php echo base_url('assets/demo/demo.js')?>"></script>
+
                 <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
                 <script>
-                $(document).ready(function() {
-                    // Javascript method's body can be found in assets/js/demos.js
-                    md.initDashboardPageCharts();
-
-                });
+                    $(document).ready(function() {
+                        // Javascript method's body can be found in assets/js/demos.js
+                        md.initDashboardPageCharts();
+                    });
                 </script>
 
 </body>
 <script>
-$(document).ready(function() {
-    $("#myInput").on("keyup", function() {
-        var value = $(this).val().toLowerCase();
-        $("#myTable tr").filter(function() {
-            $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    $(document).ready(function() {
+        $("#myInput").on("keyup", function() {
+            var value = $(this).val().toLowerCase();
+            $("#myTable tr").filter(function() {
+                $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+            });
         });
-    });
 
-    $("#view").on("click", function() {
-        var empid = $(this).data('id');
-        aletr(emid);
-        $('#employee-detail').hide();
-        $('#employee_data-loader').show();
-        $.ajax({
+        $("#view").on("click", function() {
+            var empid = $(this).data('id');
+            aletr(emid);
+            $('#employee-detail').hide();
+            $('#employee_data-loader').show();
+            $.ajax({
                 url: 'http://localhost/api/users.php',
                 type: 'POST',
                 data: 'empid=' + empid,
                 dataType: 'json',
                 cache: false
-            })
-            
+            });
+        });
     });
-
-
-});
 </script>
 
 </html>
